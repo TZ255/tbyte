@@ -6,41 +6,41 @@ import Values from "../components/widgets/Values.astro";
 import aboutImage from "../assets/images/about-office.webp";
 
 const metadata = {
-    title: "About us",
+    title: "About TanzaByte Digital",
     description:
-        "Learn more about our vision, values, and the team behind Astro Starter Pro.",
+        "Tanzania-born technology studio focused on reliable systems, chatbots, data products, and content.",
 };
 
 const values = [
     {
-        title: "Innovation",
+        title: "Build reliably",
         description:
-            "Curabitur dignissim, felis non sollicitudin molestie, urna mauris pellentesque velit, ut eleifend.",
+            "Ship stable releases, bake in observability, and document the handover so teams can operate with confidence.",
     },
     {
-        title: "Commitment",
+        title: "Stay pragmatic",
         description:
-            "Aenean condimentum finibus mauris, a fermentum justo pan eget. Sed ultricies, neque quis.",
+            "Choose the simplest stack that meets the brief, keeping costs and maintenance lean.",
     },
     {
-        title: "Quality",
+        title: "Local insight",
         description:
-            "Donec sed orci tincidunt, aliquam nisl a, condimentum nunc. Nulla varius ex nec ante feugiat.",
+            "Design for the realities of African connectivity, payments, and user behavior.",
     },
     {
-        title: "Transparency",
+        title: "Data first",
         description:
-            "Phasellus tristique, elit dapibus cursus facilisis, lorem augue fringilla nunc, vitae fermentum.",
+            "Instrument early, model carefully, and let metrics shape the next sprint.",
     },
     {
-        title: "Teamwork",
+        title: "Collaborative delivery",
         description:
-            "In hac habitasse platea dictumst. Vivamus adipiscing fermentum quam volutpat aliquam. Integer et.",
+            "Work in short, transparent cycles with stakeholders and domain experts.",
     },
     {
-        title: "Excellence",
+        title: "Security by default",
         description:
-            "Fusce at massa nec sapien auctor gravida in in tellus. Vivamus a tristique metus, et molestie.",
+            "Respect customer data and follow secure coding practices from the start.",
     },
 ];
 
@@ -53,24 +53,24 @@ const optimizedImage = await getImage({
 <BaseLayout {metadata}>
     <link slot="head" rel="preload" href={optimizedImage.src} as="image" />
     <Content2
-        title="Our Vision"
+        title="We build digital products for ambitious teams"
         description={[
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-            "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "TanzaByte Digital was founded in Moshi, Kilimanjaro to help businesses in Tanzania and across Africa move faster with dependable software. We unite engineering, data, and content so clients get one accountable team instead of juggling multiple vendors.",
+            "Our work spans system development, chatbots, football analytics, and money-market education products. Each engagement is scoped for fast wins, then scaled with evidence.",
         ]}
         tagline="About"
         image={aboutImage}
-        imageAlt="Modern web development office"
+        imageAlt="TanzaByte team collaborating"
         actions={[
             {
-                text: "Contact Us",
+                text: "Contact",
                 href: "/contact",
                 variant: "primary",
                 icon: "lucide:mail",
             },
             {
-                text: "View Details",
-                href: "#",
+                text: "Our services",
+                href: "/services",
                 variant: "secondary",
                 icon: "lucide:arrow-right",
             },
@@ -79,8 +79,8 @@ const optimizedImage = await getImage({
     <Values
         items={values}
         columns={3}
-        tagline="Our Values"
-        title="What Defines Us"
-        subtitle="Principles that guide our daily work"
+        tagline="How we work"
+        title="Principles that guide every build"
+        subtitle="A delivery approach shaped by African markets and global standards."
     />
 </BaseLayout>

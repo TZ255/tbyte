@@ -1,25 +1,30 @@
 import ogImage from "../assets/og-image.png";
 
 export const siteConfig = {
-  name: "Astro Starter Pro",
-  description: "Starter template optimized for SEO and performance. A solid foundation to start your projects with best practices.",
-  url: "https://astrostarterpro.com",
+  name: "TanzaByte Digital",
+  description:
+    "Tanzania-born digital technology studio building reliable systems, chatbots, data platforms, and content for modern brands.",
+  url: "https://www.tanzabyte.com",
   lang: "en",
-  locale: "en_US",
-  author: "Devgelo",
-  twitter: "@Devgelo",
+  locale: "en_TZ",
+  author: "TanzaByte Digital",
   ogImage: ogImage,
+  contact: {
+    email: "info@tanzabyte.com",
+    location: "NSSF Complex, Moshi, Kilimanjaro, Tanzania",
+    phone: "+255 743 000 000",
+  },
   socialLinks: {
-    twitter: "https://twitter.com",
-    github: "https://github.com/devgelo-labs/astro-starter-pro",
-    discord: "https://discord.com",
+    linkedin: "https://www.linkedin.com/company/tanzabyte",
+    twitter: "https://twitter.com/tanzabyte",
+    github: "https://github.com/tanzabyte",
+    whatsapp: "https://wa.me/255743000000",
   },
   navLinks: [
     { text: "Home", href: "/" },
+    { text: "Services", href: "/#services" },
+    { text: "Portfolio", href: "/#projects" },
     { text: "About", href: "/about" },
-    { text: "Services", href: "/services" },
-    { text: "Blog", href: "/blog" },
     { text: "Contact", href: "/contact" },
-    { text: "Widgets", href: "/widgets" },
   ],
 };

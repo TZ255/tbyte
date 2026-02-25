@@ -12,23 +12,23 @@
 }
 
 :root {
-  --background: #ffffff;
-  --foreground: #0a0a0a;
-  --primary: #0254d8;
-  --border: #e5e7eb;
-  --muted: #f4f4f5;
-  --muted-foreground: #52525b;
+  --background: #f7f9fc;
+  --foreground: #0b1224;
+  --primary: #0e73e4;
+  --border: #e2e8f0;
+  --muted: #eaf1fb;
+  --muted-foreground: #475569;
   --card: #ffffff;
 }
 
 :root[data-theme="dark"] {
-  --background: #030303;
-  --foreground: #e5e7eb;
-  --primary: #8bbcff;
-  --border: #262626;
-  --muted: #171717;
-  --muted-foreground: #a1a1aa;
-  --card: #0a0a0a;
+  --background: #050915;
+  --foreground: #e2e8f0;
+  --primary: #7ab3ff;
+  --border: #111827;
+  --muted: #0b1224;
+  --muted-foreground: #94a3b8;
+  --card: #0d1629;
 }
 
 /* Base styles using variables */
@@ -36,6 +36,8 @@
   body {
     background-color: var(--background);
     color: var(--foreground);
+    background-image: radial-gradient(circle at 20% 20%, rgba(14, 115, 228, 0.08), transparent 35%),
+      radial-gradient(circle at 80% 0%, rgba(0, 198, 174, 0.07), transparent 30%);
   }
 
   :focus-visible {

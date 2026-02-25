@@ -3,132 +3,233 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { siteConfig } from "../config/site";
 import Hero from "../components/widgets/Hero.astro";
 import Features from "../components/widgets/Features.astro";
+import Content2 from "../components/widgets/Content2.astro";
+import Content from "../components/widgets/Content.astro";
+import ServiceList from "../components/widgets/ServiceList.astro";
 import devImg from "../assets/images/dev_balanced.png";
 import openSourceImg from "../assets/images/open-source.png";
-import Content2 from "../components/widgets/Content2.astro";
+
 const metadata = {
-	title: `${siteConfig.name} — The next step for your project`,
-	description:
-		"A modern and professional template for your web projects with Astro and Tailwind CSS. Boost your development with a solid foundation.",
-	ignoreTitleTemplate: true,
+    title: `${siteConfig.name} | Digital systems built in Tanzania`,
+    description:
+        "TanzaByte Digital builds reliable systems, chatbots, data platforms, and content for ambitious brands in Tanzania and beyond.",
+    ignoreTitleTemplate: true,
 };
+
+const services = [
+    {
+        title: "System Development",
+        description:
+            "Custom web systems, dashboards, and automation tailored to your workflow and growth targets.",
+        icon: "lucide:cpu",
+    },
+    {
+        title: "Chatbot Development",
+        description:
+            "WhatsApp, Telegram, and web bots that support customers, capture leads, and automate operations.",
+        icon: "lucide:message-circle",
+    },
+    {
+        title: "Football Data & Predictions",
+        description:
+            "Data pipelines, analytics, and prediction engines for media brands, betting communities, and sports platforms.",
+        icon: "lucide:pie-chart",
+    },
+    {
+        title: "Content Generation",
+        description:
+            "AI-assisted and human-refined content for blogs, campaigns, and digital products.",
+        icon: "lucide:pencil",
+    },
+    {
+        title: "Money Markets Guides",
+        description:
+            "Educational resources and insights on stocks, mutual funds, and African financial markets.",
+        icon: "lucide:trending-up",
+    },
+];
 ---
 
 <BaseLayout {metadata}>
-	<Hero
-		title={`Starter Template for <br class="hidden md:block" /> <span class="bg-linear-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Web Developers</span>`}
-		tagline="Astro v5 + Tailwind v4"
-		description={`${siteConfig.description}`}
-		actions={[
-			{
-				text: "Get Started",
-				href: "https://github.com/devgelo-labs/astro-starter-pro",
-				variant: "primary",
-				icon: "lucide:github",
-			},
-			{
-				text: "Our Services",
-				href: "/services",
-				variant: "secondary",
-				icon: "lucide:arrow-right",
-				ariaLabel: "Learn more about our services",
-			},
-		]}
-	/>
-	<Features
-		tagline="Features"
-		title="What's Included"
-		subtitle="A selection of tools and configurations to streamline your workflow."
-		features={[
-			{
-				title: "Optimized SEO",
-				description:
-					"Base configuration for Meta tags, Open Graph, and Sitemap generation.",
-				icon: "lucide:scan-search",
-				iconClass: "bg-blue-500/10 text-blue-400",
-			},
-			{
-				title: "High Performance",
-				description: "Lightweight structure for fast load times.",
-				icon: "lucide:zap",
-				iconClass: "bg-purple-500/10 text-purple-400",
-			},
-			{
-				title: "Tailwind v4",
-				description:
-					"Integrated configuration with the latest version of Tailwind CSS.",
-				icon: "lucide:palette",
-				iconClass: "bg-pink-500/10 text-pink-400",
-			},
-		]}
-	/>
-	<Content2
-		items={[
-			{
-				title: "Responsive Design",
-				description:
-					"Base configuration for Meta tags, Open Graph, and Sitemap generation.",
-				icon: "lucide:scan-search",
-				iconClass: "bg-blue-500/10 text-blue-400",
-			},
-			{
-				title: "High Performance",
-				description: "Lightweight structure for fast load times.",
-				icon: "lucide:zap",
-				iconClass: "bg-purple-500/10 text-purple-400",
-			},
-			{
-				title: "Tailwind v4",
-				description:
-					"Integrated configuration with the latest version of Tailwind CSS.",
-				icon: "lucide:palette",
-				iconClass: "bg-pink-500/10 text-pink-400",
-			},
-		]}
-		image={devImg}
-		imageAlt="Development"
-	>
-		<Fragment>
-			<h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">
-				Development
-			</h3>
-			We provide a solid foundation to start your projects with best practices.
-		</Fragment>
-	</Content2>
-	<Content2
-		items={[
-			{
-				title: "Open Source",
-				description:
-					"Developed under the MIT license, free for personal and commercial use.",
-				icon: "lucide:github",
-				iconClass: "bg-indigo-500/10 text-indigo-400",
-			},
-			{
-				title: "Community Driven",
-				description:
-					"Built with the feedback and contributions of the developer community.",
-				icon: "lucide:users",
-				iconClass: "bg-orange-500/10 text-orange-400",
-			},
-			{
-				title: "Regular Updates",
-				description:
-					"Continuously improved with the latest technologies and best practices.",
-				icon: "lucide:refresh-cw",
-				iconClass: "bg-teal-500/10 text-teal-400",
-			},
-		]}
-		image={openSourceImg}
-		imageAlt="Community and Open Source"
-		isReversed={true}
-	>
-		<Fragment>
-			<h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">
-				Open Source & Community
-			</h3>
-			Join the revolution of modern web development. This project is open for
-			everyone to use, learn from, and contribute to.
-		</Fragment>
-	</Content2>
+    <Hero
+        title={`Digital products built in Tanzania<br class=\"hidden md:block\" /> for the world`}
+        tagline="Automation, data, and content that move businesses forward"
+        description={siteConfig.description}
+        actions={[
+            {
+                text: "Start a project",
+                href: "mailto:info@tanzabyte.com",
+                variant: "primary",
+                icon: "lucide:send",
+            },
+            {
+                text: "View services",
+                href: "#services",
+                variant: "secondary",
+                icon: "lucide:arrow-right",
+            },
+        ]}
+        bg="bg-gradient-to-b from-primary/5 via-transparent to-transparent"
+    >
+        <div class="mt-12 grid gap-4 sm:grid-cols-3">
+            <div class="rounded-2xl bg-card border border-border/60 px-5 py-4 shadow-sm">
+                <p class="text-xs uppercase tracking-[0.14em] text-muted-foreground">
+                    Location
+                </p>
+                <p class="text-lg font-semibold text-foreground">
+                    Moshi, Kilimanjaro, TZ
+                </p>
+            </div>
+            <div class="rounded-2xl bg-card border border-border/60 px-5 py-4 shadow-sm">
+                <p class="text-xs uppercase tracking-[0.14em] text-muted-foreground">
+                    Focus
+                </p>
+                <p class="text-lg font-semibold text-foreground">
+                    Systems • Chatbots • Data • Content
+                </p>
+            </div>
+            <div class="rounded-2xl bg-card border border-border/60 px-5 py-4 shadow-sm">
+                <p class="text-xs uppercase tracking-[0.14em] text-muted-foreground">
+                    Response time
+                </p>
+                <p class="text-lg font-semibold text-foreground">
+                    Under 24 hours
+                </p>
+            </div>
+        </div>
+    </Hero>
+
+    <ServiceList
+        id="services"
+        tagline="What we do"
+        title="Engineering, automation, and content under one roof"
+        subtitle="We combine modern software, AI, and data workflows to ship reliable digital products."
+        services={services}
+        classes={{ container: "pt-6" }}
+    />
+
+    <Content2
+        id="systems"
+        tagline="System Development"
+        title="Built-for-purpose platforms"
+        description={[
+            "From customer dashboards to internal tooling, we design scalable architectures, ship fast, and iterate with you.",
+        ]}
+        items={[
+            {
+                title: "Process automation",
+                description: "Replace manual work with dependable scripts, schedulers, and integrations.",
+                icon: "lucide:workflow",
+            },
+            {
+                title: "Analytics-ready",
+                description: "Data pipelines and event tracking prepared for reporting and modeling.",
+                icon: "lucide:line-chart",
+            },
+            {
+                title: "Cloud native",
+                description: "Infrastructure choices that balance reliability, cost, and ease of maintenance.",
+                icon: "lucide:cloud",
+            },
+        ]}
+        image={devImg}
+        imageAlt="Developers working on dashboards"
+    >
+        <Fragment>
+            <p class="text-base text-muted-foreground">
+                We architect with TypeScript-first stacks, pragmatic testing, and clear documentation so your team can operate with confidence.
+            </p>
+        </Fragment>
+    </Content2>
+
+    <Content2
+        id="chatbots"
+        isReversed={true}
+        tagline="Chatbot Development"
+        title="Conversational experiences that actually convert"
+        description={[
+            "WhatsApp, Telegram, and web chat flows designed for support, lead capture, and fulfillment.",
+        ]}
+        items={[
+            {
+                title: "Multi-channel",
+                description: "Deploy across WhatsApp, Telegram, and web chat with consistent logic.",
+                icon: "lucide:smartphone",
+            },
+            {
+                title: "Human handoff",
+                description: "Route to live agents instantly with context preserved.",
+                icon: "lucide:user-check",
+            },
+            {
+                title: "Metrics that matter",
+                description: "Track intent completion, CSAT, and conversion—not just message volume.",
+                icon: "lucide:bar-chart-2",
+            },
+        ]}
+        image={openSourceImg}
+        imageAlt="Chatbot automation"
+    >
+        <Fragment>
+            <p class="text-base text-muted-foreground">
+                We blend LLMs, rules, and integrations to keep experiences reliable even on spotty connections.
+            </p>
+        </Fragment>
+    </Content2>
+
+    <Features
+        id="projects"
+        tagline="Recent work"
+        title="Example outcomes"
+        subtitle="Selected engagements across sports data, automation, and content."
+        features={[
+            {
+                title: "Football insights hub",
+                description:
+                    "Predictive models with live odds monitoring and editorial CMS for a regional sports network.",
+                icon: "lucide:trophy",
+                iconClass: "bg-primary/10 text-primary",
+            },
+            {
+                title: "WhatsApp concierge",
+                description:
+                    "Lead-qualifying bot with CRM sync and agent escalation for a travel operator.",
+                icon: "lucide:bot",
+                iconClass: "bg-emerald-500/10 text-emerald-500",
+            },
+            {
+                title: "Market education portal",
+                description:
+                    "Content engine producing weekly guides on Tanzanian and African money markets.",
+                icon: "lucide:book-open",
+                iconClass: "bg-amber-500/10 text-amber-500",
+            },
+        ]}
+    />
+
+    <Content
+        id="cta"
+        tagline="Let’s build"
+        title="Tell us what you want to launch next"
+        description={[
+            "Share your goals and we’ll propose a lean roadmap in under 48 hours.",
+        ]}
+    >
+        <div class="mt-6 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6">
+            <a
+                href="mailto:info@tanzabyte.com"
+                class="rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+            >
+                Email us
+            </a>
+            <a
+                href="https://wa.me/255743000000"
+                class="rounded-full bg-muted px-5 py-3 text-sm font-semibold text-foreground transition hover:-translate-y-0.5 hover:shadow"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                WhatsApp
+            </a>
+        </div>
+    </Content>
 </BaseLayout>

@@ -3,66 +3,71 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Features from "../components/widgets/Features.astro";
 import Content from "../components/widgets/Content.astro";
 import Form from "../components/ui/Form.astro";
+import { siteConfig } from "../config/site";
 
 const metadata = {
     title: "Contact",
-    description: "Get in touch with us to discuss your next project.",
+    description: "Tell us about your project and we’ll respond within 24 hours.",
 };
 
-const visionText = ["Get in touch with us to discuss your next project."];
+const visionText = [
+    "Tell us about your goals, constraints, and timelines. We’ll come back with a lean plan and first deliverables that move the needle.",
+];
 ---
 
 <BaseLayout {metadata}>
-    <Content tagline="Contact" title="Contact" description={visionText} />
+    <Content tagline="Contact" title="Let’s build together" description={visionText} />
     <div
         class="mx-auto max-w-xl bg-card border border-border rounded-3xl p-8 shadow-sm mb-12 md:mb-16"
     >
         <Form />
+        <p class="mt-4 text-sm text-muted-foreground">
+            Prefer email? Write to <a class="text-primary font-semibold" href={`mailto:${siteConfig.contact.email}`}>{siteConfig.contact.email}</a>.
+        </p>
     </div>
     <Features
-        tagline="Contact Means"
-        title="We are here to help you"
-        subtitle="Choose the communication channel you prefer. We respond in less than 24 hours."
+        tagline="How to reach us"
+        title="Pick the channel that suits you"
+        subtitle="We reply in under 24 hours on weekdays."
         classes={{ container: "pt-0 md:pt-0" }}
         features={[
             {
-                title: "Phone",
-                description: "+123 456 7890",
-                icon: "lucide:phone",
-                iconClass: "bg-green-500/10 text-green-400",
+                title: "Email",
+                description: siteConfig.contact.email,
+                icon: "lucide:mail",
+                iconClass: "bg-blue-500/10 text-blue-500",
             },
             {
-                title: "Email",
-                description: "contact@company.com",
-                icon: "lucide:mail",
-                iconClass: "bg-yellow-500/10 text-yellow-400",
+                title: "WhatsApp",
+                description: "+255 743 000 000",
+                icon: "lucide:message-circle",
+                iconClass: "bg-emerald-500/10 text-emerald-500",
             },
             {
                 title: "Location",
-                description: "City, Country",
+                description: siteConfig.contact.location,
                 icon: "lucide:map-pin",
-                iconClass: "bg-red-500/10 text-red-400",
+                iconClass: "bg-indigo-500/10 text-indigo-500",
             },
             {
-                title: "Personalized Attention",
-                description:
-                    "We understand your needs to offer tailored solutions.",
-                icon: "lucide:user-check",
-                iconClass: "bg-blue-500/10 text-blue-400",
+                title: "Phone",
+                description: siteConfig.contact.phone,
+                icon: "lucide:phone",
+                iconClass: "bg-amber-500/10 text-amber-500",
             },
             {
-                title: "Technical Support",
+                title: "Project scoping",
                 description:
-                    "We resolve any doubt or technical incident quickly.",
-                icon: "lucide:wrench",
-                iconClass: "bg-purple-500/10 text-purple-400",
+                    "We start with a short call to define outcomes and a 2-week sprint plan.",
+                icon: "lucide:calendar-clock",
+                iconClass: "bg-primary/10 text-primary",
             },
             {
-                title: "Strategic Consulting",
+                title: "Support",
                 description:
-                    "We advise you to ensure the success of your project.",
-                icon: "lucide:briefcase",
-                iconClass: "bg-pink-500/10 text-pink-400",
+                    "Clear SLAs, monitoring, and escalation paths for live products.",
+                icon: "lucide:shield-check",
+                iconClass: "bg-slate-500/10 text-slate-500",
             },
         ]}
     />

@@ -10,6 +10,7 @@ import ThemeToggle from "../ui/ThemeToggle.astro";
         class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8"
     >
         <div class="flex items-center gap-2">
+            <span class="h-3 w-3 rounded-full bg-primary shadow-[0_0_0_6px_rgba(2,84,216,0.15)]"></span>
             <a
                 href="/"
                 class="text-xl font-bold tracking-tight text-foreground transition-colors hover:text-primary"
@@ -34,14 +35,20 @@ import ThemeToggle from "../ui/ThemeToggle.astro";
             </div>
         </div>
 
-        <div class="hidden md:flex items-center gap-4">
+        <div class="hidden md:flex items-center gap-3">
             <a
-                href={siteConfig.socialLinks.github}
+                href="mailto:info@tanzabyte.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="rounded-full bg-foreground/10 px-4 py-2 text-sm font-semibold text-foreground transition-all hover:bg-foreground/20"
             >
-                GitHub
+                Email Us
+            </a>
+            <a
+                href="mailto:info@tanzabyte.com"
+                class="rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+            >
+                Start a project
             </a>
             <ThemeToggle />
         </div>
@@ -108,10 +115,9 @@ import ThemeToggle from "../ui/ThemeToggle.astro";
                 ))
             }
             <a
-                href={siteConfig.socialLinks.github}
-                target="_blank"
-                class="block rounded-md px-3 py-2 text-base font-medium text-blue-400 transition-colors hover:cursor-pointer hover:bg-blue-500/10 hover:text-blue-300"
-                >GitHub</a
+                href="mailto:info@tanzabyte.com"
+                class="block rounded-md px-3 py-2 text-base font-semibold text-primary transition-colors hover:cursor-pointer hover:bg-primary/10"
+                >Start a project</a
             >
         </div>
     </div>

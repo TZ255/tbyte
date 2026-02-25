@@ -3,128 +3,116 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import ServiceList from "../components/widgets/ServiceList.astro";
 import Content from "../components/widgets/Content.astro";
 import Content2 from "../components/widgets/Content2.astro";
-import webDevImg from "../assets/images/services/web-dev.webp";
-import seoImg from "../assets/images/services/seo.webp";
-import consultingImg from "../assets/images/services/consulting.webp";
+import devImg from "../assets/images/dev_balanced.png";
+import openSourceImg from "../assets/images/open-source.png";
 
 const services = [
     {
-        title: "Web Development",
-        description: "Static and dynamic sites built for the modern era.",
-        icon: "lucide:globe",
-    },
-    {
-        title: "SEO Optimization",
-        description: "We ensure your content is found by those looking for it.",
-        icon: "lucide:search",
-    },
-    {
-        title: "IT Consulting",
+        title: "System Development",
         description:
-            "Technical advice to scale your projects to the next level.",
-        icon: "lucide:rocket",
+            "Tailored web systems, dashboards, and internal tools that automate the way you work.",
+        icon: "lucide:cpu",
+    },
+    {
+        title: "Chatbot Development",
+        description:
+            "WhatsApp, Telegram, and web chatbots designed for support, lead capture, and fulfillment.",
+        icon: "lucide:message-circle",
+    },
+    {
+        title: "Football Data & Predictions",
+        description:
+            "Analytics pipelines and prediction models for media brands, betting communities, and fan platforms.",
+        icon: "lucide:pie-chart",
+    },
+    {
+        title: "Content Generation",
+        description:
+            "AI-assisted and human-refined content for blogs, campaigns, and digital products.",
+        icon: "lucide:pencil",
+    },
+    {
+        title: "Money Markets Analysis",
+        description:
+            "Guides and insights on Tanzanian and African markets to educate and convert your audience.",
+        icon: "lucide:trending-up",
     },
 ];
+
 const metadata = {
     title: "Services",
     description:
-        "Discover our web development, SEO optimization, and technology consulting services.",
+        "TanzaByte Digital builds systems, chatbots, data products, and content that help businesses grow.",
 };
 ---
 
 <BaseLayout {metadata}>
     <Content
         tagline="Services"
-        title="Our Services"
+        title="Full-stack digital delivery"
         description={[
-            "Comprehensive solutions designed to maximize the potential of your digital presence.",
+            "From architecture to launch, we pair software engineering with data, automation, and content so your team moves faster.",
         ]}
     />
+
     <ServiceList services={services} classes={{ container: "pt-0 md:pt-0" }} />
-    <Content
-        tagline="Web Development"
-        title="Modern Web Development"
+
+    <Content2
+        id="service-systems"
+        tagline="System Development"
+        title="Resilient platforms built for growth"
         description={[
-            "We specialize in building fast, secure, and scalable websites using the latest technologies. We transform your vision into an impactful digital experience.",
+            "We design modular architectures, add observability from day one, and document the handover so your team can operate confidently.",
         ]}
-        classes={{ container: "pb-0 md:pb-0" }}
-    />
-    <Content2
         items={[
             {
-                title: "Responsive Design",
-                description:
-                    "Your site will look perfect on any device, from mobiles to desktop screens.",
+                title: "APIs & integrations",
+                description: "Secure APIs and connectors that keep your data flowing across tools.",
             },
             {
-                title: "Optimized Performance",
-                description:
-                    "Fast loading to improve user experience and SEO positioning.",
+                title: "Automation",
+                description: "Schedulers and background jobs that replace manual workflows.",
             },
         ]}
-        image={webDevImg}
-        imageAlt="Modern Web Development"
+        image={devImg}
+        imageAlt="Developers building dashboards"
         classes={{ container: "pt-0 md:pt-0" }}
-    >
-        <Fragment>
-            <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">
-                Modern Web Development
-            </h3>
-            We specialize in building fast, secure, and scalable websites using the
-            latest technologies. We transform your vision into an impactful digital
-            experience.
-        </Fragment>
-    </Content2>
+    />
 
     <Content2
+        id="service-chatbots"
         isReversed={true}
+        tagline="Chatbot Development"
+        title="Conversational funnels that convert"
+        description={[
+            "Design, copy, intent training, and integrations so your bot becomes a dependable channel, not a gimmick.",
+        ]}
         items={[
             {
-                title: "SEO Audit",
-                description:
-                    "We deeply analyze your website to identify technical and content improvement opportunities.",
+                title: "Multi-channel delivery",
+                description: "WhatsApp, Telegram, and web chat with shared logic.",
             },
             {
-                title: "Content Strategy",
-                description:
-                    "We create relevant content plans that attract and retain your target audience.",
+                title: "Analytics",
+                description: "Track intent completion, response times, and agent handoffs.",
             },
         ]}
-        image={seoImg}
-        imageAlt="SEO Strategies"
-    >
-        <Fragment>
-            <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">
-                SEO Optimization
-            </h3>
-            We help your business get found by the right people. Our organic positioning
-            strategies are designed to improve your organic visibility.
-        </Fragment>
-    </Content2>
+        image={openSourceImg}
+        imageAlt="Chat automations"
+    />
 
-    <Content2
-        items={[
-            {
-                title: "Digital Transformation",
-                description:
-                    "We guide you in adopting new technologies to optimize your business processes.",
-            },
-            {
-                title: "Software Architecture",
-                description:
-                    "We design robust and scalable systems prepared for future growth.",
-            },
+    <Content
+        tagline="Need something else?"
+        title="Let’s plan a focused build sprint"
+        description={[
+            "Share your goals and constraints and we’ll propose a scoped roadmap in under 48 hours.",
         ]}
-        image={consultingImg}
-        imageAlt="Technology Consulting"
     >
-        <Fragment>
-            <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">
-                Technology Consulting
-            </h3>
-            We accompany you in critical decision-making. We evaluate your current
-            infrastructure and design personalized roadmaps to take your company to
-            the next technological level.
-        </Fragment>
-    </Content2>
+        <a
+            href="mailto:info@tanzabyte.com"
+            class="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+        >
+            Contact us
+        </a>
+    </Content>
 </BaseLayout>
